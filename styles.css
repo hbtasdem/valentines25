@@ -37,7 +37,7 @@ body {
 
 }
 
-.card {
+/* .card {
     position: absolute;
     background-color: #fffdd0 ;
     width: 432px;
@@ -45,6 +45,33 @@ body {
     top: 10px;
     left: 24px;
     box-shadow: -5px -5px 100px rgba(0,0,0,0.4);
+} */
+
+.card {
+    position: absolute;
+    background-color: #fffdd0;
+    width: 432px;
+    height: 272px;
+    top: 10px; /* Start at the top of the envelope */
+    left: 24px;
+    box-shadow: -5px -5px 100px rgba(0,0,0,0.4);
+    transform: translateY(0); /* Initially positioned below the envelope */
+    -webkit-transition: transform 1s ease; /* WebKit prefix for smooth transition */
+    transition: transform 2s ease;
+    animation: slideOut 2s ease-out forwards; /* WebKit animation for card sliding */
+}
+
+.besties.opened .card {
+    transform: translateY(-100%); /* Slide the card into view when opened */
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translateY(0); /* Start from below the envelope */
+    }
+    100% {
+        transform: translateY(-100%); /* End at the normal position */
+    }
 }
 
 .card:before{
@@ -79,6 +106,7 @@ body {
     width:0;
     height:0;
     z-index:10;
+    
 }
 
 .front:before {
@@ -90,7 +118,9 @@ body {
     top:-160px;
     width:0;
     height:0;
+    
   }
+  
 
 .buttons {
     position: absolute;

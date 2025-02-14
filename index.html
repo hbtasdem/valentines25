@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <div class="besties">
-            <div class="envelope"></div>
+            <div class="envelope" id="envelope"></div>
             <div class="front"></div>
             <div class="card">
                 <div class="text" id="message"> Do you have a name? </div>
@@ -31,6 +31,14 @@
         <div class="shadow"></div>
     </div>
     
-    <script src="script.js"></script>
+    <script>
+        const envelope = document.getElementById("envelope");
+
+        // Add the event listener to the envelope
+        envelope.addEventListener("click", () => {
+            envelope.parentElement.classList.add("opened");  // Add the opened class to the container
+        });
+    </script>
 </body>
 </html>
+

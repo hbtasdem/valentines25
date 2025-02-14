@@ -1,37 +1,29 @@
-// Wait for the DOM to load
-document.addEventListener("DOMContentLoaded", function () {
-    const yesBtn = document.getElementById("yesBtn");
-    const noBtn = document.getElementById("noBtn");
-    const message = document.getElementById("message");
-    const buttons = document.getElementById("buttons");
+const envelope = document.getElementById("envelope");
+const buttons = document.getElementById("buttons");
+const message = document.getElementById("message");
 
-    // Initially, show the buttons after a delay to simulate the "envelope opening"
+envelope.addEventListener("click", () => {
+    // Trigger the animation by adding the 'opened' class
+    envelope.parentElement.classList.add("opened");
+
+    // Show the buttons after animation is complete
     setTimeout(() => {
-        buttons.style.display = "block";
-    }, 2000); // 2 seconds delay for the envelope to open
+        buttons.style.display = "block"; // Show buttons
+        message.textContent = "Do you have a name?";
+    }, 1200); // Wait for the envelope opening to finish before showing buttons
+});
 
-    // When the "Yes" button is clicked
-    yesBtn.addEventListener("click", () => {
-        // Shrink the "Yes" button in a loop
-        let scale = 1;
-        const shrinkInterval = setInterval(() => {
-            if (scale > 0.5) {
-                scale -= 0.02; // Shrink by 5% each interval
-                yesBtn.style.transform = `scale(${scale})`;
-            } else {
-                clearInterval(shrinkInterval); // Stop shrinking when it gets too small
-            }
-        }, 100); // Shrink every 100ms
+// Add button event listeners
+const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
 
-        // Make the "No" button bigger when "Yes" is clicked
-        noBtn.style.transform = "scale(1.5)"; // Make "No" button bigger
-    });
+yesBtn.addEventListener("click", () => {
+    // Make No button larger
+    noBtn.style.transform = "scale(1.5)";
+});
 
-    // When the "No" button is clicked
-    noBtn.addEventListener("click", () => {
-        message.textContent = "Can I call you mine?"; // Change the message text
-        buttons.style.display = "none"; // Hide the buttons
-        // You can add more fun animations or effects here!
-        document.body.style.background = "linear-gradient(#f3d0e6, #ffffff)";
-    });
+noBtn.addEventListener("click", () => {
+    message.textContent = "Can I call you mine?"; // Change the message
+    yesBtn.style.display = "none"; // Hide the Yes button
+    noBtn.style.display = "none"; // Hide the No button
 });
