@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<div class="container">
-    <div class="besties">
-        <div class="envelope"></div>
-        <div class="front"></div>
-        <div class="card">
-            <div class="text" > Hello, Bestie! You are amazing! </div>
-            <div class="heart"></div>
-        </div>
-        <div class="hearts">
-            <div class="one"></div>
-            <div class="two"></div>
-            <div class="three"></div>
-            <div class="four"></div>
-            <div class="five"></div>
-        </div>
-    </div>
-    <div class="shadow"></div>
-</div>
-
-<head> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call You Mine</title>
     <link rel="stylesheet" href="styles.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
 </head>
+<body>
+    <div class="container">
+        <div class="besties">
+            <div class="envelope"></div>
+            <div class="front"></div>
+            <div class="card">
+                <div class="text" id="message"> Do you have a name? </div>
+                <!-- Buttons will appear after the initial message -->
+                <div class="buttons" id="buttons" style="display: none;">
+                    <button id="yesBtn">Yes</button>
+                    <button id="noBtn">No</button>
+                </div>
+            </div>
+            <div class="hearts">
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+                <div class="four"></div>
+                <div class="five"></div>
+            </div>
+        </div>
+        <div class="shadow"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
 </html>
