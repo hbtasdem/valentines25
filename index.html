@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="styles.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
 </head>
+
+
 <body>
     <div class="container">
         <div class="besties">
@@ -20,25 +22,28 @@
                     <button id="noBtn">No</button>
                 </div>
             </div>
-            <div class="hearts">
-                <div class="one"></div>
-                <div class="two"></div>
-                <div class="three"></div>
-                <div class="four"></div>
-                <div class="five"></div>
-            </div>
+            
         </div>
         <div class="shadow"></div>
     </div>
     
-    <script>
+    <!-- <script>
         const envelope = document.getElementById("envelope");
+        const card = document.querySelector(".card");
+        const buttons = document.getElementById("buttons");
 
-        // Add the event listener to the envelope
-        envelope.addEventListener("click", () => {
-            envelope.parentElement.classList.add("opened");  // Add the opened class to the container
-        });
-    </script>
+        // Add event listener for envelope click
+        card.addEventListener("click", () => {
+        card.classList.add("open"); // Start card slide animation
+
+        // Wait for animation to finish before showing buttons
+        setTimeout(() => {
+        buttons.style.display = "block"; // Show buttons after animation ends
+    }, 2); // Matches animation duration (1s)
+    });
+    </script> -->
+    <script src="script.js"></script>
 </body>
+
 </html>
 
