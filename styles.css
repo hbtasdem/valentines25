@@ -69,6 +69,29 @@ body {
     color: #991066;
 }
 
+.front {
+    position: absolute;
+    border-right: 300px solid mediumvioletred;
+    border-top: 200px solid transparent;
+    border-bottom: 100px solid mediumvioletred;
+    left:180px;
+    top:20px;
+    width:0;
+    height:0;
+    z-index:10;
+}
+
+.front:before {
+    position: absolute;
+    content:"";
+    border-left: 480px solid mediumvioletred;
+    border-top: 255px solid transparent;
+    left:-180px;
+    top:-160px;
+    width:0;
+    height:0;
+  }
+
 .buttons {
     position: absolute;
     top: 140px;
